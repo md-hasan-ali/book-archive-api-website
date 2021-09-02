@@ -27,9 +27,10 @@ const searchButton = () => {
 const showData = books => {
     // Error Handleing
     if (books.length === 0) {
-        errorDiv.innerText = 'No Result Fount..!'
+        errorDiv.innerText = 'No Result Found..!'
     } else {
         errorDiv.innerText = '';
+        return;
     }
     // clear previous content
     booksContainer.innerHTML = '';
@@ -44,7 +45,7 @@ const showData = books => {
             <div class="card h-100">
                 <img height="350" src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : ''}-M.jpg" class="card-img-top" alt="cover-image"></img>
                 <div class="card-body">
-                    <h3 class="card-title"><span class="border-bottom-3">Book Name</span> : ${book.title}</h3>
+                    <h3 class="card-title mb-3">Book Name : ${book.title}</h3>
                     <h6>Author Name : ${book.author_name ? book.author_name[0] : ''}</h6>
                     <p class="card-text">First Publish : ${book.first_publish_year ? book.first_publish_year : ''}</p>
                     <p class="card-text">Publisher : ${book.publisher ? book.publisher[0] : ''}</p>
