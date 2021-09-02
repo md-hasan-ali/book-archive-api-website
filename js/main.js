@@ -30,7 +30,6 @@ const showData = books => {
         errorDiv.innerText = 'No Result Found..!'
     } else {
         errorDiv.innerText = '';
-        return;
     }
     // clear previous content
     booksContainer.innerHTML = '';
