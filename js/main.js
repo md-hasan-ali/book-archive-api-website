@@ -25,7 +25,6 @@ const searchButton = () => {
 }
 // show data and call function
 const showData = books => {
-    console.log(books);
     // Error Handleing
     if (books.length === 0) {
         errorDiv.innerText = 'No Result Fount..!'
@@ -34,6 +33,10 @@ const showData = books => {
     }
     // clear previous content
     booksContainer.innerHTML = '';
+    // Show Total Result
+    totalResult.innerHTML = `
+      <h2 class="text-center text-danger my-5">Total Books Result : ${books.length}<h2/>
+    `
     books.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -50,8 +53,5 @@ const showData = books => {
         `;
         booksContainer.appendChild(div)
     })
-    totalResult.innerHTML = `
-        <h2 class="text-center text-danger my-5">Total Books Result : ${books.length}<h2/>
-    `
-}
 
+}
