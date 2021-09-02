@@ -11,6 +11,11 @@
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        #spinner {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,13 +28,22 @@
                     <input id="search-input" type="text" class="form-control form-control-lg"
                         placeholder="Search Your Book..." aria-label="Recipient's username"
                         aria-describedby="button-addon2">
-                    <button onclick="searchButton()" class="btn btn-outline-secondary" type="button"
-                        id="button-addon2">Search Book</button>
+                    <button onclick="searchButton()" class="btn btn-secondary" type="button" id="button-addon2">Search
+                        Book</button>
                 </div>
                 <hr>
             </div>
         </section>
         <!-- search-area End -->
+        <!-- Loading Spinner Start -->
+        <section class="container">
+            <div class="row justify-content-center mt-5">
+                <div id="spinner" class="spinner-border text-danger mt-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <!-- Loading Spinner End -->
         <!-- Search-Result-Area Start -->
         <section>
             <div class="container">
@@ -38,9 +52,9 @@
                 </div>
                 <!-- Search Deatils -->
                 <div id="search-details" class="row row-cols-1 row-cols-md-3 g-4"></div>
-                <!-- Error Message Div Start -->
+                <!-- Error Message -->
                 <div class="row">
-                    <div id="error" class="fs-4 mt-4 text-warning text-center"></div>
+                    <div id="error" class="fs-3 text-primary text-center"></div>
                 </div>
             </div>
         </section>

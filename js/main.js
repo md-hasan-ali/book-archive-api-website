@@ -3,15 +3,23 @@ const searchInput = document.getElementById('search-input');
 const booksContainer = document.getElementById('search-details');
 const totalResult = document.getElementById('show-total');
 const errorDiv = document.getElementById('error');
+const spinner = document.getElementById('spinner');
 
+// Toggle Spinner Function
+const toggleSpinner = displayStyle => {
+    spinner.style.display = displayStyle;
+}
 // Search Function add 
 const searchButton = () => {
     const searchText = searchInput.value;
+    // Spinner add
+    toggleSpinner('block');
     // error handleing
     if (searchText === "") {
         totalResult.innerHTML = '';
         booksContainer.innerHTML = '';
         errorDiv.innerText = "Search field cannot be empty.";
+        toggleSpinner('none');
         return;
     } else {
         errorDiv.innerText = '';
@@ -36,7 +44,8 @@ const showData = books => {
     // Show Total Result
     totalResult.innerHTML = `
       <h2 class="text-center text-danger my-5">Total Books Result : ${books.length}<h2/>
-    `
+    `;
+    // get book item using forEach 
     books.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -53,5 +62,5 @@ const showData = books => {
         `;
         booksContainer.appendChild(div)
     })
-
+    toggleSpinner('none');
 }
