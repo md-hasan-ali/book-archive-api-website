@@ -22,7 +22,7 @@
                         placeholder="Search Your Book..." aria-label="Recipient's username"
                         aria-describedby="button-addon2">
                     <button onclick="searchButton()" class="btn btn-outline-secondary" type="button"
-                        id="button-addon2">Button</button>
+                        id="button-addon2">Search Book</button>
                 </div>
                 <hr>
             </div>
@@ -32,15 +32,18 @@
         <!-- Search-Result-Area Start -->
         <section>
             <div class="container">
-                <div id="search-details" class="row gy-4">
-                </div>
                 <!-- Search Total Result -->
                 <div class="row" id="show-total">
                 </div>
-                <!-- Error Message Div Start -->
-                <div class="row">
-                    <div id="error" class="fs-4 mt-4 text-warning"></div>
-                </div>
+
+                <!-- Search Deatils -->
+                <div id="search-details" class="row row-cols-1 row-cols-md-3 g-4"></div>
+
+            </div>
+            <!-- Error Message Div Start -->
+            <div class="row">
+                <div id="error" class="fs-4 mt-4 text-warning"></div>
+            </div>
             </div>
         </section>
         <!-- Search-Result-Area End -->
